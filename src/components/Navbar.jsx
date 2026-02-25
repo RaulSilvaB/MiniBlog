@@ -74,7 +74,7 @@ const Navbar = () => {
         </li>
         {user && (
           <li>
-            <button onClick={logoutgir}>Sair</button>
+            <button onClick={logout}>Sair</button>
           </li>
         )}
       </ul>
