@@ -1,7 +1,6 @@
 import { useState, useEffect, useReducer } from "react";
 import { db } from "../firebase/config";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { type } from "firebase/firestore/pipelines";
 
 const initialState = {
   loading: null,
@@ -22,7 +21,7 @@ const insertReducer = (state, action) => {
 };
 
 export const useInsertDocument = (docCollection) => {
-  const [reponse, dispatch] = useReducer(insertReducer, initialState);
+  const [response, dispatch] = useReducer(insertReducer, initialState);
 
   //lidar com vazamento de memória
   const [cancelled, setCancelled] = useState(false);
@@ -61,5 +60,5 @@ export const useInsertDocument = (docCollection) => {
     return () => setCancelled(true);
   }, []);
 
-  return { insertDocument, reponse };
+  return { insertDocument, response };
 };
