@@ -22,11 +22,14 @@ const CreatePost = () => {
     e.preventDefault();
     setFormError("");
 
+    let errorOcurred = false;
+
     // validação da URL
     try {
       new URL(image);
     } catch (error) {
       setFormError("A imagem precisa ser uma URL.");
+      errorOcurred = true;
     }
     // criar o arrays de tags
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
@@ -34,8 +37,9 @@ const CreatePost = () => {
     // checar todos os valores
     if (!title || !image || !tags || !body) {
       setFormError("Por favor, preencha  todos os campos!");
+      errorOcurred = true;
     }
-    if (formError) return;
+    if (errorOcurred) return;
 
     insertDocument({
       title,
