@@ -6,7 +6,6 @@ import {
   orderBy,
   onSnapshot,
   where,
-  querySnapshot,
 } from "firebase/firestore";
 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {

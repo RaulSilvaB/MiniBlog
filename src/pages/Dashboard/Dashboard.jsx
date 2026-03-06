@@ -28,7 +28,7 @@ const Dashboard = () => {
         <div className={styles.noposts}>
           <p>Não foram encontrados posts</p>
           <Link to={"/posts/create"} className="btn">
-            Criar Primeiro post
+            Criar primeiro post
           </Link>
         </div>
       ) : (
@@ -36,7 +36,7 @@ const Dashboard = () => {
           {" "}
           <div className={styles.post_header}>
             <span>Título</span>
-            <span>Açôes</span>
+            <span>Ações</span>
           </div>
           {posts &&
             posts.map((post) => (

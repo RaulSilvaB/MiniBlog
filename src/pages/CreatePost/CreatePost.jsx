@@ -105,7 +105,7 @@ const CreatePost = () => {
         {!response.loading && <button className="btn">Publicar</button>}
         {response.loading && (
           <button className="btn" disabled>
-            aguarde...
+            Aguarde...
           </button>
         )}
         {response.error && <p className="error"> {response.error}</p>}
